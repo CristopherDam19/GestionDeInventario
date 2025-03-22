@@ -27,7 +27,9 @@ public class Main {
                     "\n3.Actualizar producto \n4.Eliminar producto  \n5.Salir");
             System.out.print("->");
             op = s.nextInt();
+            //Menu regresa al principio
             switch (op) {
+                //Caso 1 donde se agregan los productos
                 case 1:
                     do {
                         System.out.println(" Agregar productos");
@@ -52,10 +54,11 @@ public class Main {
                         respuesta = s.next();
 
 
-                    } while (respuesta.toLowerCase().equalsIgnoreCase("Y"));
+                    } while (respuesta.toLowerCase().equalsIgnoreCase("Y"));// hasta que no sea y con mayuscula o miniscula se seguira
+                    // ingresan productos
 
                     break;
-
+                    //Caso 2  listar productos
                 case 2:
                     System.out.println("Productos en Sistema");
                     System.out.println(" Nombre \t Precio \t Fecha Caducidad \t Facbricante");
@@ -64,7 +67,7 @@ public class Main {
                                 "\t\t  " + fechaCaducidad.get(i) + "\t\t\t " + fabricante.get(i));
                     }
                     break;
-
+                //Cas0 3 actualizar productos
                 case 3:
 
                     System.out.println("Actualizar un producto");
@@ -101,12 +104,13 @@ public class Main {
 
                     }
                     break;
-
+            // caso 4 buscar y eliminar producto
                 case 4:
                     System.out.println("Ingrese el nombre del producto (#Cereal_Chocolate)");
                     buscaNameProduct = s.next();
 
-                    for (int i = 0; i < nombreProducto.size(); i++) {
+                    for (int i = 0; i < nombreProducto.size(); i++) //.size() una funcion que determina el varlode la lista
+                         {
                         if (nombreProducto.get(i).equalsIgnoreCase(buscaNameProduct.toLowerCase())) {
                             nombreProducto.remove(i);
                             fechaCaducidad.remove(i);
@@ -117,7 +121,7 @@ public class Main {
                     }
             }
             }
-            while (op != 5) ;
+            while (op != 5) ; // cierra mientras no sea cinco
 
         }
 
