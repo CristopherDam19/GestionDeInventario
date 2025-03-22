@@ -23,7 +23,7 @@ public class Main {
 
         do {
             System.out.println("Bienvenido al Sistema");
-            System.out.println("1. Agregar producto \n2.Listar productos" +
+            System.out.println("1.Agregar producto \n2.Listar productos" +
                     "\n3.Actualizar producto \n4.Eliminar producto  \n5.Salir");
             System.out.print("->");
             op = s.nextInt();
@@ -58,11 +58,10 @@ public class Main {
 
                 case 2:
                     System.out.println("Productos en Sistema");
-                    for (int i = 0; i < preciosProductos.size()-1; i++) {
-                        System.out.println("Nombre del producto: " + nombreProducto.get(i));
-                        System.out.println("Precio del producto: " + preciosProductos.get(i));
-                        System.out.println("Fecha de caducidad: " + fechaCaducidad.get(i));
-                        System.out.println("Fabricante: " + fabricante.get(i));
+                    System.out.println(" Nombre \t Precio \t Fecha Caducidad \t Facbricante");
+                    for (int i = 0; i < preciosProductos.size(); i++) {
+                        System.out.println("\t"+  nombreProducto.get(i) + "\t  " + preciosProductos.get(i) +
+                                "\t\t  " + fechaCaducidad.get(i) + "\t\t\t " + fabricante.get(i));
                     }
                     break;
 
@@ -101,10 +100,7 @@ public class Main {
                         }
 
                     }
-
-
                     break;
-
 
                 case 4:
                     System.out.println("Ingrese el nombre del producto (#Cereal_Chocolate)");
