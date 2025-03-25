@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
+        //Constante
         final double iva = 0.12;
         // Lista de los tipos
         ArrayList<Double> preciosProductos = new ArrayList<>();
@@ -100,13 +101,15 @@ public class Main {
                             fabricante.set(i, nuevoFabricante);
 
                             System.out.println("Producto actualizado con éxito.");
+                        }else{
+                            System.out.println("El producto no fue encontrado");
                         }
 
                     }
                     break;
             // caso 4 buscar y eliminar producto
                 case 4:
-                    System.out.println("Ingrese el nombre del producto (#Cereal_Chocolate)");
+                    System.out.println("Ingrese el nombre del producto (ej: Cereal_Chocolate)");
                     buscaNameProduct = s.next();
 
                     for (int i = 0; i < nombreProducto.size(); i++) //.size() una funcion que determina el varlode la lista
@@ -119,6 +122,9 @@ public class Main {
                         }
                         break;
                     }
+                default:
+                    System.out.println("Esa opcion no existe");
+                    break;
             }
             }
             while (op != 5) ; // cierra mientras no sea cinco
