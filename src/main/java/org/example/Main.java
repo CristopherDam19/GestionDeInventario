@@ -65,7 +65,7 @@ public class Main {
                     System.out.println(" Nombre \t Precio \t Fecha Caducidad \t Facbricante");
                     for (int i = 0; i < preciosProductos.size(); i++) {
                         System.out.println("\t"+  nombreProducto.get(i) + "\t  " + preciosProductos.get(i) +
-                                "\t\t  " + fechaCaducidad.get(i) + "\t\t\t " + fabricante.get(i));
+                                "\t\t  " + fechaCaducidad.get(i) + "\t\t\t\t " + fabricante.get(i));
                     }
                     break;
                 //Cas0 3 actualizar productos
@@ -111,17 +111,22 @@ public class Main {
                 case 4:
                     System.out.println("Ingrese el nombre del producto (ej: Cereal_Chocolate)");
                     buscaNameProduct = s.next();
+                    for (int i = 0; i <nombreProducto.size(); i++)
+                        {
+                            if (nombreProducto.get(i).equalsIgnoreCase(buscaNameProduct.toLowerCase())) {
+                                nombreProducto.remove(i);
+                                fechaCaducidad.remove(i);
+                                preciosProductos.remove(i);
+                                fabricante.remove(i);
+                            }
 
-                    for (int i = 0; i < nombreProducto.size(); i++) //.size() una funcion que determina el varlode la lista
-                         {
-                        if (nombreProducto.get(i).equalsIgnoreCase(buscaNameProduct.toLowerCase())) {
-                            nombreProducto.remove(i);
-                            fechaCaducidad.remove(i);
-                            preciosProductos.remove(i);
-                            fabricante.remove(i);
-                        }
-                        break;
                     }
+                    System.out.println("fue eliminando el producto");
+                   break;
+
+                case 5:
+                    System.out.println("SALIENDO DEL SISTEMA");
+                    break;
                 default:
                     System.out.println("Esa opcion no existe");
                     break;
